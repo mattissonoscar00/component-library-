@@ -1,23 +1,20 @@
 /**
  * Design Tokens - Extracted from Figma
  * File: Arbetsprov-Tele-2
- * 
- * These tokens follow the Figma variable naming conventions
- * and are organized by category for use with Radix UI components.
+ *
+ * Two brand modes: Zapp (budget) and Saga (premium).
+ * Shared structural tokens live in :root.
+ * Brand-specific tokens are scoped via [data-brand="zapp"|"saga"].
+ * Zapp is the default — :root inherits Zapp values so components
+ * render correctly even without a data-brand attribute.
  */
 
-:root {
-  /* ==========================================================================
-     TYPOGRAPHY - Font Families
-     ========================================================================== */
-  --font-family-base: "DM Sans", sans-serif;
-  --font-family-heading: "DM Sans", sans-serif;
-  --font-family-paragraph: "DM Sans", sans-serif;
-  --font-family-eyebrow: "DM Sans", sans-serif;
+/* ==========================================================================
+   SHARED TOKENS (identical across brands)
+   ========================================================================== */
 
-  /* ==========================================================================
-     TYPOGRAPHY - Font Sizes
-     ========================================================================== */
+:root {
+  /* Typography - Font Sizes */
   --font-size-display-s: 40px;
   --font-size-display-xs: 32px;
   --font-size-subheading-l: 18px;
@@ -30,97 +27,39 @@
   --font-size-heading-l: 24px;
   --font-size-eyebrow: 14px;
 
-  /* ==========================================================================
-     TYPOGRAPHY - Button Letter Spacing
-     ========================================================================== */
-  --letter-spacing-button-s: -0.14px;
-
-  /* ==========================================================================
-     TYPOGRAPHY - Font Weights
-     ========================================================================== */
+  /* Typography - Font Weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* ==========================================================================
-     TYPOGRAPHY - Line Heights
-     ========================================================================== */
+  /* Typography - Line Heights */
   --line-height-heading: 48px;
   --line-height-heading-40: 40px;
   --line-height-heading-l: 1.2;
   --line-height-eyebrow: 16.8px;
   --line-height-body: 1.4;
 
-  /* ==========================================================================
-     TYPOGRAPHY - Letter Spacing
-     ========================================================================== */
-  --letter-spacing-heading: -0.5px;
+  /* Typography - Letter Spacing (shared) */
   --letter-spacing-eyebrow: 0.8px;
+  --letter-spacing-button-s: -0.14px;
 
-  /* ==========================================================================
-     BACKGROUND & BORDERS - Container Colors
-     ========================================================================== */
-  --color-container-default: #f5ece4;
-  --color-container-emphasis: #611f69;
-
-  /* ==========================================================================
-     BACKGROUND & BORDERS - Border Colors
-     ========================================================================== */
-  --border-color-default: rgba(0, 0, 0, 0.05);
-  --sds-color-black-100: rgba(0, 0, 0, 0.05);
-  --sds-color-black-200: rgba(0, 0, 0, 0.1);
-
-  /* ==========================================================================
-     TEXT, ACTION, STATUS - Text Colors
-     ========================================================================== */
-  --text-default-primary: #611f69;
+  /* Text Colors (shared across brands) */
   --text-default-default: #000000;
   --color-on-surface-default: #000000;
   --color-on-surface-neutral: #404040;
   --color-on-container-default: #000000;
 
-  /* ==========================================================================
-     TAG COLORS
-     ========================================================================== */
-  --color-tag-color: #ffffff;
-  --color-tag-on-tag: #611f69;
+  /* Border Colors */
+  --border-color-default: rgba(0, 0, 0, 0.05);
+  --sds-color-black-100: rgba(0, 0, 0, 0.05);
+  --sds-color-black-200: rgba(0, 0, 0, 0.1);
 
-  /* ==========================================================================
-     TEXT, ACTION, STATUS - Button Colors
-     ========================================================================== */
-  --button-background-default: #611f69;
-  --button-background-hover: #814c87;
-  --button-background-pressed: #45164b;
-  --button-background-disabled: #b698ba;
-  --button-background-secondary-default: #ffffff;
-  --button-background-secondary-hover: #efe9f0;
-  --button-label-default: #ffffff;
-  --button-label-secondary: #611f69;
-  --button-label-disabled: #ffffff;
-
-  /* ==========================================================================
-     FOCUS RING
-     ========================================================================== */
-  --border-focus-color-primary: #611f69;
-  --border-focus-color-surface: #ffffff;
-  --border-focus-radius: 99px;
-
-  /* ==========================================================================
-     OPACITY
-     ========================================================================== */
-  --opacity-80: 0.8;
-  --opacity-40: 0.4;
-
-  /* ==========================================================================
-     TEXT, ACTION, STATUS - Icon Colors
-     ========================================================================== */
+  /* Icon Colors */
   --icon-color-default: #000000;
   --icon-color-white: #ffffff;
 
-  /* ==========================================================================
-     SPACING - Gap
-     ========================================================================== */
+  /* Spacing - Gap */
   --space-gap-4: 4px;
   --space-gap-xxs: 4px;
   --space-gap-xs: 8px;
@@ -133,9 +72,7 @@
   --space-gap-24: 24px;
   --space-gap-32: 32px;
 
-  /* ==========================================================================
-     SPACING - Padding
-     ========================================================================== */
+  /* Spacing - Padding */
   --space-padding-xs: 16px;
   --space-padding-s: 24px;
   --space-padding-m: 32px;
@@ -143,42 +80,132 @@
   --space-padding-16: 16px;
   --space-padding-xl: 48px;
 
-  /* ==========================================================================
-     RADIUS
-     ========================================================================== */
-  --container-radius-subtle: 4px;
-  --container-radius-default: 8px;
-  --button-radius-default: 99px;
-  --radius-xl: 99px;
+  /* Opacity */
+  --opacity-80: 0.8;
+  --opacity-40: 0.4;
 
-  /* ==========================================================================
-     STROKE / BORDER WIDTH
-     ========================================================================== */
+  /* Stroke / Border Width */
   --stroke-border: 1px;
 
-  /* ==========================================================================
-     DEPTH / SHADOWS
-     ========================================================================== */
+  /* Depth / Shadows */
   --depth-0: 0px;
   --depth-025: 1px;
   --depth-100: 4px;
   --depth-200: 8px;
 
-  /* Shadow compositions */
-  --shadow-200: 
+  --shadow-200:
     var(--depth-0) var(--depth-025) var(--depth-200) 0px var(--sds-color-black-200),
     var(--depth-0) var(--depth-025) var(--depth-100) 0px var(--sds-color-black-100);
 
-  /* ==========================================================================
-     ICON SIZES
-     ========================================================================== */
+  /* Icon Sizes */
   --icon-size-xxs: 12px;
   --icon-size-xs: 16px;
   --icon-size-s: 20px;
 
-  /* ==========================================================================
-     BUTTON SIZE TOKENS
-     ========================================================================== */
+  /* Button Size Tokens */
   --button-height-lg: 48px;
   --button-height-sm: 40px;
+
+  /* Button Label */
+  --button-label-default: #ffffff;
+  --button-label-disabled: #ffffff;
+}
+
+/* ==========================================================================
+   ZAPP (Budget Brand) — default
+   ========================================================================== */
+
+:root,
+[data-brand="zapp"] {
+  /* Typography - Font Families */
+  --font-family-base: "DM Sans", sans-serif;
+  --font-family-heading: "DM Sans", sans-serif;
+  --font-family-paragraph: "DM Sans", sans-serif;
+  --font-family-eyebrow: "DM Sans", sans-serif;
+
+  /* Typography - Eyebrow Weight */
+  --font-weight-eyebrow: 700;
+
+  /* Typography - Heading Letter Spacing */
+  --letter-spacing-heading: -0.5px;
+
+  /* Container Colors */
+  --color-container-default: #f5ece4;
+  --color-container-emphasis: #611f69;
+
+  /* Text Accent */
+  --text-default-primary: #611f69;
+
+  /* Tag Colors */
+  --color-tag-color: #ffffff;
+  --color-tag-on-tag: #611f69;
+
+  /* Button Colors */
+  --button-background-default: #611f69;
+  --button-background-hover: #814c87;
+  --button-background-pressed: #45164b;
+  --button-background-disabled: #b698ba;
+  --button-background-secondary-default: #ffffff;
+  --button-background-secondary-hover: #efe9f0;
+  --button-label-secondary: #611f69;
+
+  /* Focus Ring */
+  --border-focus-color-primary: #611f69;
+  --border-focus-color-surface: #ffffff;
+
+  /* Radius */
+  --container-radius-subtle: 4px;
+  --container-radius-default: 8px;
+  --button-radius-default: 99px;
+  --radius-xl: 99px;
+  --border-focus-radius: 99px;
+}
+
+/* ==========================================================================
+   SAGA (Premium Brand)
+   ========================================================================== */
+
+[data-brand="saga"] {
+  /* Typography - Font Families */
+  --font-family-base: "Inter", sans-serif;
+  --font-family-heading: "Inter", sans-serif;
+  --font-family-paragraph: "Inter", sans-serif;
+  --font-family-eyebrow: "Inter", sans-serif;
+
+  /* Typography - Eyebrow Weight */
+  --font-weight-eyebrow: 500;
+
+  /* Typography - Heading Letter Spacing */
+  --letter-spacing-heading: -1.5px;
+
+  /* Container Colors */
+  --color-container-default: #ffffff;
+  --color-container-emphasis: #095fbb;
+
+  /* Text Accent */
+  --text-default-primary: #095fbb;
+
+  /* Tag Colors */
+  --color-tag-color: #f8f8f8;
+  --color-tag-on-tag: #095fbb;
+
+  /* Button Colors */
+  --button-background-default: #095fbb;
+  --button-background-hover: #0b4f9a;
+  --button-background-pressed: #073d78;
+  --button-background-disabled: #7eaed9;
+  --button-background-secondary-default: #ffffff;
+  --button-background-secondary-hover: #e6eff8;
+  --button-label-secondary: #095fbb;
+
+  /* Focus Ring */
+  --border-focus-color-primary: #095fbb;
+  --border-focus-color-surface: #ffffff;
+
+  /* Radius */
+  --container-radius-subtle: 0px;
+  --container-radius-default: 2px;
+  --button-radius-default: 0px;
+  --radius-xl: 99px;
+  --border-focus-radius: 0px;
 }

@@ -252,7 +252,7 @@ export const PromptBanner = React.forwardRef<HTMLElement, PromptBannerProps>(
             <div className={`flex flex-col ${eyebrowGapClass}`}>
               <p
                 className={[
-                  "font-[var(--font-weight-bold)] font-[family-name:var(--font-family-eyebrow)]",
+                  "font-[var(--font-weight-eyebrow)] font-[family-name:var(--font-family-eyebrow)]",
                   "text-[length:var(--font-size-eyebrow)] leading-[1.2]",
                   "tracking-[var(--letter-spacing-eyebrow)] uppercase",
                   "text-[var(--text-default-primary)]",
