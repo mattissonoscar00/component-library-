@@ -111,7 +111,7 @@ const Tag = ({ label }: { label: string }) => (
       "rounded-[var(--container-radius-subtle)]",
       "bg-[var(--color-tag-color)]",
       "text-[var(--color-tag-on-tag)]",
-      "font-[var(--font-weight-semibold)] font-[family-name:var(--font-family-base)]",
+      "font-[var(--font-weight-button-label)] font-[family-name:var(--font-family-base)]",
       "text-[length:12px] leading-[1.2] whitespace-nowrap",
     ].join(" ")}
   >
@@ -262,7 +262,7 @@ export const PromptBanner = React.forwardRef<HTMLElement, PromptBannerProps>(
               </p>
               <h2
                 className={[
-                  "font-[var(--font-weight-semibold)] font-[family-name:var(--font-family-heading)]",
+                  "font-[var(--font-weight-heading)] font-[family-name:var(--font-family-heading)]",
                   "text-[var(--color-on-container-default)]",
                   headingSizeClass,
                 ].join(" ")}
@@ -320,7 +320,7 @@ export const PromptBanner = React.forwardRef<HTMLElement, PromptBannerProps>(
                 <div
                   className={[
                     "flex items-center gap-[var(--space-gap-4)]",
-                    "font-[var(--font-weight-semibold)] font-[family-name:var(--font-family-heading)]",
+                    "font-[var(--font-weight-heading)] font-[family-name:var(--font-family-heading)]",
                     "text-[length:var(--font-size-subheading-l)] leading-none whitespace-nowrap",
                   ].join(" ")}
                 >
@@ -360,7 +360,7 @@ export const PromptBanner = React.forwardRef<HTMLElement, PromptBannerProps>(
                     size={buttonSize}
                     suffixIcon={<ArrowForwardIcon size={buttonSize} />}
                     onClick={onPrimaryClick}
-                    className="w-full inline-flex items-center justify-center gap-[var(--space-gap-xs)] font-[var(--font-weight-semibold)] font-[family-name:var(--font-family-base)] rounded-[var(--button-radius-default)] transition-colors duration-150 ease-in-out cursor-pointer select-none focus:outline-none focus-visible:outline-none disabled:cursor-not-allowed h-[var(--button-height-sm)] px-[var(--space-padding-12)] text-[length:var(--font-size-button-label-s)] leading-[1.2] tracking-[var(--letter-spacing-button-s)] bg-[var(--button-background-default)] text-[var(--button-label-default)] hover:bg-[var(--button-background-hover)] active:bg-[var(--button-background-pressed)] disabled:bg-[var(--button-background-disabled)] disabled:opacity-[var(--opacity-80)] focus-visible:ring-[4px] focus-visible:ring-[var(--border-focus-color-primary)] focus-visible:ring-offset-[2px] focus-visible:ring-offset-[var(--border-focus-color-surface)]"
+                    className="w-full inline-flex items-center justify-center gap-[var(--space-gap-xs)] font-[var(--font-weight-button-label)] font-[family-name:var(--font-family-base)] rounded-[var(--button-radius-default)] transition-colors duration-150 ease-in-out cursor-pointer select-none focus:outline-none focus-visible:outline-none disabled:cursor-not-allowed h-[var(--button-height-sm)] px-[var(--space-padding-12)] text-[length:var(--font-size-button-label-s)] leading-[1.2] tracking-[var(--letter-spacing-button-s)] bg-[var(--button-background-default)] text-[var(--button-label-default)] hover:bg-[var(--button-background-hover)] active:bg-[var(--button-background-pressed)] disabled:bg-[var(--button-background-disabled)] disabled:opacity-[var(--opacity-80)] focus-visible:ring-[4px] focus-visible:ring-[var(--border-focus-color-primary)] focus-visible:ring-offset-[2px] focus-visible:ring-offset-[var(--border-focus-color-surface)]"
                   >
                     {primaryLabel}
                   </Button>
@@ -369,7 +369,7 @@ export const PromptBanner = React.forwardRef<HTMLElement, PromptBannerProps>(
                       variant="secondary"
                       size={buttonSize}
                       onClick={onSecondaryClick}
-                      className="w-full inline-flex items-center justify-center gap-[var(--space-gap-xs)] font-[var(--font-weight-semibold)] font-[family-name:var(--font-family-base)] rounded-[var(--button-radius-default)] transition-colors duration-150 ease-in-out cursor-pointer select-none focus:outline-none focus-visible:outline-none disabled:cursor-not-allowed h-[var(--button-height-sm)] px-[var(--space-padding-12)] text-[length:var(--font-size-button-label-s)] leading-[1.2] tracking-[var(--letter-spacing-button-s)] bg-[var(--button-background-secondary-default)] text-[var(--button-label-secondary)] border border-[var(--color-container-emphasis)] hover:bg-[var(--button-background-secondary-hover)] active:bg-[var(--button-background-secondary-hover)] disabled:opacity-[var(--opacity-40)] disabled:bg-[var(--button-background-secondary-default)] focus-visible:ring-[4px] focus-visible:ring-[var(--border-focus-color-primary)] focus-visible:ring-offset-[2px] focus-visible:ring-offset-[var(--border-focus-color-surface)]"
+                      className="w-full inline-flex items-center justify-center gap-[var(--space-gap-xs)] font-[var(--font-weight-button-label)] font-[family-name:var(--font-family-base)] rounded-[var(--button-radius-default)] transition-colors duration-150 ease-in-out cursor-pointer select-none focus:outline-none focus-visible:outline-none disabled:cursor-not-allowed h-[var(--button-height-sm)] px-[var(--space-padding-12)] text-[length:var(--font-size-button-label-s)] leading-[1.2] tracking-[var(--letter-spacing-button-s)] bg-[var(--button-background-secondary-default)] text-[var(--button-label-secondary)] border border-[var(--color-container-emphasis)] hover:bg-[var(--button-background-secondary-hover)] active:bg-[var(--button-background-secondary-hover)] disabled:opacity-[var(--opacity-40)] disabled:bg-[var(--button-background-secondary-default)] focus-visible:ring-[4px] focus-visible:ring-[var(--border-focus-color-primary)] focus-visible:ring-offset-[2px] focus-visible:ring-offset-[var(--border-focus-color-surface)]"
                     >
                       {secondaryLabel}
                     </Button>

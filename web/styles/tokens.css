@@ -126,6 +126,12 @@
   /* Typography - Eyebrow Weight */
   --font-weight-eyebrow: 700;
 
+  /* Typography - Heading Weight */
+  --font-weight-heading: 600;
+
+  /* Typography - Button Label Weight */
+  --font-weight-button-label: 600;
+
   /* Typography - Heading Letter Spacing */
   --letter-spacing-heading: -0.5px;
 
@@ -174,6 +180,12 @@
 
   /* Typography - Eyebrow Weight */
   --font-weight-eyebrow: 500;
+
+  /* Typography - Heading Weight */
+  --font-weight-heading: 500;
+
+  /* Typography - Button Label Weight */
+  --font-weight-button-label: 400;
 
   /* Typography - Heading Letter Spacing */
   --letter-spacing-heading: -1.5px;

@@ -28,7 +28,7 @@ export interface ButtonProps
 
 const baseStyles = [
   "inline-flex items-center justify-center gap-[var(--space-gap-xs)]",
-  "font-[var(--font-weight-semibold)] font-[family-name:var(--font-family-base)]",
+  "font-[var(--font-weight-button-label)] font-[family-name:var(--font-family-base)]",
   "rounded-[var(--button-radius-default)]",
   "transition-colors duration-150 ease-in-out",
   "cursor-pointer select-none",
